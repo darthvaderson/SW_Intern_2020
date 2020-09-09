@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qcells.consumer.data.parsing.dao.StringsLogDao">
+
+    <insert id="insertStrings">
+		insert into strings_log values (#{gt_id}, #{st_id}, to_timestamp(#{startTs}/1000), to_timestamp(#{endTs}/1000), #{postError}, #{host_fix}, #{port_fix}, #{name_fix}, #{serialNo_fix}, #{fwVersion_fix}, #{comparator_fix}, #{devider_fix}, #{rawPulsesCounter_fix}, #{error}, #{stringVoltage}, #{stringCurrent}, #{temperature}, #{totalWatt}) ON CONFLICT DO NOTHING
+	</insert>
+
+</mapper>

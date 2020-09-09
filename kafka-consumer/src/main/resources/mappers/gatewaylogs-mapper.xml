@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qcells.consumer.data.parsing.dao.GatewayLogDao">
+
+    <insert id="insertGateway">
+		INSERT INTO gateway_log values (#{gt_id}, to_timestamp(#{startTs}/1000), to_timestamp(#{endTs}/1000), #{mac_fix}, #{sn_fix}, #{software_version_fix}, #{ioboard_fix}) ON CONFLICT DO NOTHING
+	</insert>
+
+</mapper>
